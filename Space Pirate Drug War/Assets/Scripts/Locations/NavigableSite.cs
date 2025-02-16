@@ -9,5 +9,13 @@ namespace SPDW.Locations
 
         public UnityEvent gotFocus;
         public UnityEvent lostFocus;
+
+        public void OnSiteSelected(NavigableSite selectedSite) {
+            if (selectedSite == this) {
+                gotFocus?.Invoke();
+            } else {
+                lostFocus?.Invoke();
+            }
+        }
     }
 }

@@ -836,6 +836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38bae45066181824b97bbee1408d8e16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  systemName: Vetraxis Prime
   navigableSites:
   - {fileID: 764309953}
   - {fileID: 919488494}
@@ -1974,6 +1975,10 @@ PrefabInstance:
     - target: {fileID: 1446605993511392, guid: a6478dfeefe8ec844bf1104314990f60, type: 3}
       propertyPath: m_Name
       value: SM_Env_Planet_010
+      objectReference: {fileID: 0}
+    - target: {fileID: 1446605993511392, guid: a6478dfeefe8ec844bf1104314990f60, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4716339026755804, guid: a6478dfeefe8ec844bf1104314990f60, type: 3}
       propertyPath: m_LocalScale.x

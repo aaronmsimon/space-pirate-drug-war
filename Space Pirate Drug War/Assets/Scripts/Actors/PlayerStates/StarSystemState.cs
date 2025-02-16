@@ -8,35 +8,29 @@ namespace SPDW.StatePattern.PlayerStates
     {
         public StarSystemState(Player player) : base(player) { }
 
-        private StarSystem starSystem;
-        private int selectedSite = 0;
+        private StarSystem starSystem;        
         private float moveCooldown = 0.2f;
         private float lastMoveTime = 0;
-        private bool errorChecksPassed = false;
+        private bool canUpdate = false;
 
         public override void Enter() {
             starSystem = GameObject.FindFirstObjectByType<StarSystem>();
-            if (starSystem != null && starSystem.NavigableSites.Count > 0) {
-                errorChecksPassed = true;
-                starSystem.NavigableSites[selectedSite].gotFocus?.Invoke();
+            if (starSystem == null) {
+                Debug.LogError("No Star System found.");
+                return;
             }
+            if (starSystem.NavigableSites.Count == 0) {
+                Debug.LogError($"No Navigable Sites found in Star System {starSystem.SystemName}.");
+                return;
+            }
+            canUpdate = true;
         }
         
         public override void Exit() { }
 
         public override void Update() {
-            if (Time.time - lastMoveTime > moveCooldown) {
-                if (errorChecksPassed && player.MoveInput.x != 0) {
-                    ChangeSelectedSite((int)player.MoveInput.x);
-                }
-            }
-        }
-
-        private void ChangeSelectedSite(int dir) {
-            if (errorChecksPassed) {
-                starSystem.NavigableSites[selectedSite].lostFocus?.Invoke();
-                selectedSite = (selectedSite + dir + starSystem.NavigableSites.Count) % starSystem.NavigableSites.Count;
-                starSystem.NavigableSites[selectedSite].gotFocus?.Invoke();
+            if (canUpdate && Time.time - lastMoveTime > moveCooldown && player.MoveInput.x != 0) {
+                starSystem.ChangeSelectedSite((int)player.MoveInput.x);
                 lastMoveTime = Time.time;
             }
         }
