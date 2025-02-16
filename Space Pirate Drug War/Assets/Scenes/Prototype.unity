@@ -153,6 +153,11 @@ Transform:
   - {fileID: 1330636030}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &168961319 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1064218972584280, guid: c906f458df0dfe54096955f6c9df4f82, type: 3}
+  m_PrefabInstance: {fileID: 1091268032}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &253264663
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,6 +558,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4093498311929006, guid: 4f18bd9d42d26074fac7a87dbe5da29c, type: 3}
   m_PrefabInstance: {fileID: 373002982}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &393138208 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1446605993511392, guid: a6478dfeefe8ec844bf1104314990f60, type: 3}
+  m_PrefabInstance: {fileID: 2125260565}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,6 +684,11 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 1
+--- !u!1 &579004615 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1733152616027280, guid: e2b52b82abcb53c49a6ff26f3ca944f4, type: 3}
+  m_PrefabInstance: {fileID: 919488489}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &623197756
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,7 +706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &623197757
 RectTransform:
   m_ObjectHideFlags: 0
@@ -755,6 +770,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 656591899}
+  - component: {fileID: 656591900}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -778,11 +794,128 @@ Transform:
   - {fileID: 1275587473}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &656591900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656591898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30d619430992b2444a9aca73c0180d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputReader: {fileID: 11400000, guid: 23862238b2f102b43baea0665b8f7656, type: 2}
+--- !u!1 &662366209
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 662366211}
+  - component: {fileID: 662366210}
+  m_Layer: 0
+  m_Name: StarSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &662366210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662366209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38bae45066181824b97bbee1408d8e16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navigableSites:
+  - {fileID: 764309953}
+  - {fileID: 919488494}
+  - {fileID: 1091268037}
+--- !u!4 &662366211
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662366209}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &764309948 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4716339026755804, guid: a6478dfeefe8ec844bf1104314990f60, type: 3}
   m_PrefabInstance: {fileID: 2125260565}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &764309952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393138208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea53bf7f9508b744ac95c9acfbd9b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newAmount: 0.5
+--- !u!114 &764309953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393138208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c5eb7dee5a22c74baf0458090fc7ee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  siteName: Nivara-7
+  gotFocus:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 764309952}
+        m_TargetAssemblyTypeName: SPDW.Effects.ChangeRimPower, Assembly-CSharp
+        m_MethodName: SetToNewAmount
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  lostFocus:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 764309952}
+        m_TargetAssemblyTypeName: SPDW.Effects.ChangeRimPower, Assembly-CSharp
+        m_MethodName: ReturnToOriginal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,13 +1040,75 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1733152616027280, guid: e2b52b82abcb53c49a6ff26f3ca944f4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 919488494}
+    - targetCorrespondingSourceObject: {fileID: 1733152616027280, guid: e2b52b82abcb53c49a6ff26f3ca944f4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 919488495}
   m_SourcePrefab: {fileID: 100100000, guid: e2b52b82abcb53c49a6ff26f3ca944f4, type: 3}
 --- !u!4 &919488490 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4248267944066848, guid: e2b52b82abcb53c49a6ff26f3ca944f4, type: 3}
   m_PrefabInstance: {fileID: 919488489}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &919488494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579004615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c5eb7dee5a22c74baf0458090fc7ee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  siteName: Peregrine Station
+  gotFocus:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 919488495}
+        m_TargetAssemblyTypeName: SPDW.Effects.ChangeRimPower, Assembly-CSharp
+        m_MethodName: SetToNewAmount
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  lostFocus:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 919488495}
+        m_TargetAssemblyTypeName: SPDW.Effects.ChangeRimPower, Assembly-CSharp
+        m_MethodName: ReturnToOriginal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &919488495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579004615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea53bf7f9508b744ac95c9acfbd9b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newAmount: 0.5
 --- !u!1001 &998129614
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1049,13 +1244,75 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4732997279752800, guid: c906f458df0dfe54096955f6c9df4f82, type: 3}
       insertIndex: -1
       addedObject: {fileID: 373002983}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1064218972584280, guid: c906f458df0dfe54096955f6c9df4f82, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1091268037}
+    - targetCorrespondingSourceObject: {fileID: 1064218972584280, guid: c906f458df0dfe54096955f6c9df4f82, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1091268038}
   m_SourcePrefab: {fileID: 100100000, guid: c906f458df0dfe54096955f6c9df4f82, type: 3}
 --- !u!4 &1091268033 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4732997279752800, guid: c906f458df0dfe54096955f6c9df4f82, type: 3}
   m_PrefabInstance: {fileID: 1091268032}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1091268037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168961319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c5eb7dee5a22c74baf0458090fc7ee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  siteName: Zephyria
+  gotFocus:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1091268038}
+        m_TargetAssemblyTypeName: SPDW.Effects.ChangeRimPower, Assembly-CSharp
+        m_MethodName: SetToNewAmount
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  lostFocus:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1091268038}
+        m_TargetAssemblyTypeName: SPDW.Effects.ChangeRimPower, Assembly-CSharp
+        m_MethodName: ReturnToOriginal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1091268038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168961319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea53bf7f9508b744ac95c9acfbd9b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newAmount: 0.5
 --- !u!1001 &1131791507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1785,7 +2042,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1446605993511392, guid: a6478dfeefe8ec844bf1104314990f60, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 764309953}
+    - targetCorrespondingSourceObject: {fileID: 1446605993511392, guid: a6478dfeefe8ec844bf1104314990f60, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 764309952}
   m_SourcePrefab: {fileID: 100100000, guid: a6478dfeefe8ec844bf1104314990f60, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -1799,3 +2062,4 @@ SceneRoots:
   - {fileID: 656591899}
   - {fileID: 2046783789}
   - {fileID: 55246251}
+  - {fileID: 662366211}

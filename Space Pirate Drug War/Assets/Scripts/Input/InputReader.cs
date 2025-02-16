@@ -31,27 +31,27 @@ public class InputReader : ScriptableObject, GameInput.IPlayerActions, GameInput
 
     public void OnAttack(InputAction.CallbackContext context)
     {
-        throw new System.NotImplementedException();
+        // no op
     }
 
     public void OnCrouch(InputAction.CallbackContext context)
     {
-        throw new System.NotImplementedException();
+        // no op
     }
 
     public void OnInteract(InputAction.CallbackContext context)
     {
-        throw new System.NotImplementedException();
+        // no op
     }
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        throw new System.NotImplementedException();
+        // no op
     }
 
     public void OnLook(InputAction.CallbackContext context)
     {
-        throw new System.NotImplementedException();
+        // no op
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -64,17 +64,17 @@ public class InputReader : ScriptableObject, GameInput.IPlayerActions, GameInput
 
     public void OnNext(InputAction.CallbackContext context)
     {
-        throw new System.NotImplementedException();
+        // no op
     }
 
     public void OnPrevious(InputAction.CallbackContext context)
     {
-        throw new System.NotImplementedException();
+        // no op
     }
 
     public void OnSprint(InputAction.CallbackContext context)
     {
-        throw new System.NotImplementedException();
+        // no op
     }
 
     // ---- UI ----
