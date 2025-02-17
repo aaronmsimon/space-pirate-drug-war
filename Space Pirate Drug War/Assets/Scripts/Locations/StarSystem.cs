@@ -10,7 +10,6 @@ namespace SPDW.Locations
     {
         [Header("System Info")]
         [SerializeField] private string systemName;
-        [SerializeField] private List<NavigableSite> navigableSites;
 
         [Header("Scriptable Objects")]
         [SerializeField] private GameEvent siteSelectedGameEvent;
@@ -21,12 +20,18 @@ namespace SPDW.Locations
         public event Action<NavigableSite> SiteSelected;
 
         private RectTransform canvas;
+        private List<NavigableSite> navigableSites = new List<NavigableSite>();
 
         private int selectedSite = 0;
 
         private void Awake() {
             canvas = GameObject.Find("Canvas").GetComponent<RectTransform>();
             if (canvas == null) Debug.LogError("No Canvas in scene.");
+
+            for (int i = 0; i < transform.childCount; i++) {
+                NavigableSite site = transform.GetChild(i).GetComponent<NavigableSite>();
+                if (site != null) navigableSites.Add(site);
+            }
         }
 
         private void OnEnable() {
