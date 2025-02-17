@@ -17,5 +17,8 @@ namespace SPDW.Locations
                 lostFocus?.Invoke();
             }
         }
+
+        // ---- PROPERTIES ----
+        public string SiteName => siteName;
     }
 }

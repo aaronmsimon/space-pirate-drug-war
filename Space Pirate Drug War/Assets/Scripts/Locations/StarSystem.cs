@@ -1,17 +1,33 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using RoboRyanTron.Unite2017.Events;
+using RoboRyanTron.Unite2017.Variables;
 
 namespace SPDW.Locations
 {
     public class StarSystem : MonoBehaviour
     {
+        [Header("System Info")]
         [SerializeField] private string systemName;
         [SerializeField] private List<NavigableSite> navigableSites;
 
+        [Header("Scriptable Objects")]
+        [SerializeField] private GameEvent siteSelectedGameEvent;
+        [SerializeField] private StringVariable selectedSiteName;
+        [SerializeField] private FloatVariable uiPosX;
+        [SerializeField] private FloatVariable uiPosY;
+        
         public event Action<NavigableSite> SiteSelected;
 
+        private RectTransform canvas;
+
         private int selectedSite = 0;
+
+        private void Awake() {
+            canvas = GameObject.Find("Canvas").GetComponent<RectTransform>();
+            if (canvas == null) Debug.LogError("No Canvas in scene.");
+        }
 
         private void OnEnable() {
             foreach (NavigableSite navigableSite in navigableSites) {
@@ -36,6 +52,14 @@ namespace SPDW.Locations
 
         private void SelectSite(NavigableSite selectedSite) {
             SiteSelected?.Invoke(selectedSite);
+
+            if (canvas != null) {
+                Vector3 screenPos = Camera.main.WorldToScreenPoint(selectedSite.transform.position);
+                selectedSiteName.Value = selectedSite.SiteName;
+                uiPosX.Value = screenPos.x;
+                uiPosY.Value = screenPos.y;
+                siteSelectedGameEvent.Raise();
+            }
         }
 
         // ---- PROPERTIES ----
