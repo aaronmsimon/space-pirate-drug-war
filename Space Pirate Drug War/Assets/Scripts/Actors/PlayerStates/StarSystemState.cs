@@ -1,6 +1,7 @@
 using UnityEngine;
 using SPDW.Actors;
 using SPDW.Locations;
+using SPDW.Splines;
 
 namespace SPDW.StatePattern.PlayerStates
 {
@@ -24,14 +25,28 @@ namespace SPDW.StatePattern.PlayerStates
                 return;
             }
             canUpdate = true;
+
+            player.InputReader.interactEvent += OnInteract;
         }
         
-        public override void Exit() { }
+        public override void Exit() {
+            player.InputReader.interactEvent -= OnInteract;
+        }
 
         public override void Update() {
             if (canUpdate && Time.time - lastMoveTime > moveCooldown && player.MoveInput.x != 0) {
                 starSystem.ChangeSelectedSite((int)player.MoveInput.x);
                 lastMoveTime = Time.time;
+            }
+        }
+
+        private void OnInteract() {
+            SplinePath spline = starSystem.SelectedSite.GetComponent<SplinePath>();
+            if (spline != null) {
+                player.SplineAnimator.Container = spline.SplineContainer;
+                player.PlaySpline();
+            } else {
+                Debug.LogError($"No spline flight path assigned to {starSystem.SelectedSite.SiteName}");
             }
         }
     }

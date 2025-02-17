@@ -70,5 +70,6 @@ namespace SPDW.Locations
         // ---- PROPERTIES ----
         public string SystemName => systemName;
         public List<NavigableSite> NavigableSites => navigableSites;
+        public NavigableSite SelectedSite => navigableSites[selectedSite];
     }
 }

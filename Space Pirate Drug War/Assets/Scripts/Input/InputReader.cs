@@ -7,6 +7,7 @@ public class InputReader : ScriptableObject, GameInput.IPlayerActions, GameInput
 {
     // ---- PLAYER ----
     public event UnityAction<Vector2> moveEvent;
+    public event UnityAction interactEvent;
 
     private GameInput gameInput;
 
@@ -41,7 +42,9 @@ public class InputReader : ScriptableObject, GameInput.IPlayerActions, GameInput
 
     public void OnInteract(InputAction.CallbackContext context)
     {
-        // no op
+		if (context.phase == InputActionPhase.Started) {
+			interactEvent?.Invoke();
+        }
     }
 
     public void OnJump(InputAction.CallbackContext context)
