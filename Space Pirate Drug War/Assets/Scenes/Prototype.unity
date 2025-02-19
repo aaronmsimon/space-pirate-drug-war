@@ -280,7 +280,7 @@ Transform:
   m_GameObject: {fileID: 55246250}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2000, z: 0}
+  m_LocalPosition: {x: 0, y: 3000, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1051,7 +1051,7 @@ MonoBehaviour:
     - Position:
         x: 0
         y: 0
-        z: 141.9
+        z: 131
       TangentIn:
         x: 0
         y: 0
@@ -1384,6 +1384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30d619430992b2444a9aca73c0180d36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  travelToSiteGameEvent: {fileID: 11400000, guid: cf36e7100d416f843a01ed3dba05a902, type: 2}
   inputReader: {fileID: 11400000, guid: 23862238b2f102b43baea0665b8f7656, type: 2}
 --- !u!1 &662366209
 GameObject:
@@ -1590,7 +1591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4248267944066848, guid: e2b52b82abcb53c49a6ff26f3ca944f4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 4.6
       objectReference: {fileID: 0}
     - target: {fileID: 4248267944066848, guid: e2b52b82abcb53c49a6ff26f3ca944f4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1598,23 +1599,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4248267944066848, guid: e2b52b82abcb53c49a6ff26f3ca944f4, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9988668
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4248267944066848, guid: e2b52b82abcb53c49a6ff26f3ca944f4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.047594894
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4248267944066848, guid: e2b52b82abcb53c49a6ff26f3ca944f4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4248267944066848, guid: e2b52b82abcb53c49a6ff26f3ca944f4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4248267944066848, guid: e2b52b82abcb53c49a6ff26f3ca944f4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 5.456
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4248267944066848, guid: e2b52b82abcb53c49a6ff26f3ca944f4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1879,6 +1880,7 @@ GameObject:
   - component: {fileID: 1033406116}
   - component: {fileID: 1033406118}
   - component: {fileID: 1033406117}
+  - component: {fileID: 1033406119}
   m_Layer: 5
   m_Name: NavigableSiteLabel
   m_TagString: Untagged
@@ -1952,6 +1954,34 @@ MonoBehaviour:
   selectedSiteName: {fileID: 11400000, guid: c18e025c9aedcf242bab614c09d66ff3, type: 2}
   uiPosX: {fileID: 11400000, guid: d857d81dcb91aa440a1399d16914bac7, type: 2}
   uiPosY: {fileID: 11400000, guid: 4e85c48c0d6e6934dbebe19aef1a8b9b, type: 2}
+--- !u!114 &1033406119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033406115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c1f45ada40f3b947baf318273de10c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: cf36e7100d416f843a01ed3dba05a902, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1033406118}
+        m_TargetAssemblyTypeName: SPDW.UI.SelectedSiteLabel, Assembly-CSharp
+        m_MethodName: HideMessage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1091268032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2115,6 +2145,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splineContainer: {fileID: 2041473061}
+--- !u!1 &1117650369
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1117650370}
+  m_Layer: 0
+  m_Name: Site Interface UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1117650370
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117650369}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2000, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1131791507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3433,3 +3494,4 @@ SceneRoots:
   - {fileID: 662366211}
   - {fileID: 1622182517}
   - {fileID: 55246251}
+  - {fileID: 1117650370}
