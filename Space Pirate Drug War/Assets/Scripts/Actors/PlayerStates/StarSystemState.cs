@@ -35,7 +35,9 @@ namespace SPDW.StatePattern.PlayerStates
 
         public override void Update() {
             if (canUpdate && Time.time - lastMoveTime > moveCooldown && player.MoveInput.x != 0) {
-                starSystem.ChangeSelectedSite((int)player.MoveInput.x);
+                // For joystick, round up
+                int moveX = (int)(Mathf.Ceil(Mathf.Abs(player.MoveInput.x)) * Mathf.Sign(player.MoveInput.x));
+                starSystem.ChangeSelectedSite(moveX);
                 lastMoveTime = Time.time;
             }
         }
@@ -48,6 +50,7 @@ namespace SPDW.StatePattern.PlayerStates
             } else {
                 Debug.LogError($"No spline flight path assigned to {starSystem.SelectedSite.SiteName}");
             }
+            player.TravelToSiteGameEvent.Raise();
         }
     }
 }

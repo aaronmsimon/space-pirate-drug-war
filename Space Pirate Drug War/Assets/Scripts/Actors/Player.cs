@@ -2,11 +2,16 @@ using UnityEngine;
 using UnityEngine.Splines;
 using SPDW.StatePattern;
 using SPDW.StatePattern.PlayerStates;
+using RoboRyanTron.Unite2017.Events;
 
 namespace SPDW.Actors
 {
     public class Player : MonoBehaviour
     {
+        [Header("Game Events")]
+        [SerializeField] private GameEvent travelToSiteGameEvent;
+
+        [Header("Input")]
         [SerializeField] private InputReader inputReader;
 
         private Vector2 moveInput;
@@ -53,6 +58,7 @@ namespace SPDW.Actors
         public InputReader InputReader => inputReader;
         public Vector2 MoveInput => moveInput;
         public SplineAnimate SplineAnimator => splineAnimate;
+        public GameEvent TravelToSiteGameEvent => travelToSiteGameEvent;
 
     }
 }

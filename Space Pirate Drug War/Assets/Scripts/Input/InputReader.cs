@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "InputReader", menuName = "Game/Input Reader")]
-public class InputReader : ScriptableObject, GameInput.IPlayerActions, GameInput.IUIActions
+public class InputReader : ScriptableObject, GameInput.IStarSystemActions, GameInput.IUIActions
 {
     // ---- PLAYER ----
     public event UnityAction<Vector2> moveEvent;
@@ -16,7 +16,7 @@ public class InputReader : ScriptableObject, GameInput.IPlayerActions, GameInput
 		if (gameInput == null)
 		{
 			gameInput = new GameInput();
-			gameInput.Player.SetCallbacks(this);
+			gameInput.StarSystem.SetCallbacks(this);
 			gameInput.UI.SetCallbacks(this);
 		}
 
@@ -30,26 +30,11 @@ public class InputReader : ScriptableObject, GameInput.IPlayerActions, GameInput
 
     // ---- PLAYER ----
 
-    public void OnAttack(InputAction.CallbackContext context)
-    {
-        // no op
-    }
-
-    public void OnCrouch(InputAction.CallbackContext context)
-    {
-        // no op
-    }
-
     public void OnInteract(InputAction.CallbackContext context)
     {
 		if (context.phase == InputActionPhase.Started) {
 			interactEvent?.Invoke();
         }
-    }
-
-    public void OnJump(InputAction.CallbackContext context)
-    {
-        // no op
     }
 
     public void OnLook(InputAction.CallbackContext context)
@@ -63,21 +48,6 @@ public class InputReader : ScriptableObject, GameInput.IPlayerActions, GameInput
 		{
 			moveEvent?.Invoke(context.ReadValue<Vector2>());
 		}
-    }
-
-    public void OnNext(InputAction.CallbackContext context)
-    {
-        // no op
-    }
-
-    public void OnPrevious(InputAction.CallbackContext context)
-    {
-        // no op
-    }
-
-    public void OnSprint(InputAction.CallbackContext context)
-    {
-        // no op
     }
 
     // ---- UI ----
@@ -136,19 +106,19 @@ public class InputReader : ScriptableObject, GameInput.IPlayerActions, GameInput
     
 	public void EnablePlayerInput()
 	{
-		gameInput.Player.Enable();
+		gameInput.StarSystem.Enable();
 		gameInput.UI.Disable();
 	}
 
 	public void EnableUIInput()
 	{
-		gameInput.Player.Disable();
+		gameInput.StarSystem.Disable();
 		gameInput.UI.Enable();
 	}
 
 	public void DisableAllInput()
 	{
-		gameInput.Player.Disable();
+		gameInput.StarSystem.Disable();
 		gameInput.UI.Disable();
 	}
 }

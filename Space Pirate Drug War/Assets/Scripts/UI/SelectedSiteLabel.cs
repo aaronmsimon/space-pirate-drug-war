@@ -4,7 +4,7 @@ using RoboRyanTron.Unite2017.Variables;
 
 namespace SPDW.UI
 {
-    public class SingleMessage : MonoBehaviour
+    public class SelectedSiteLabel : MonoBehaviour
     {
         [Header("UI Info")]
         [SerializeField] private TMP_Text textDisplay;
