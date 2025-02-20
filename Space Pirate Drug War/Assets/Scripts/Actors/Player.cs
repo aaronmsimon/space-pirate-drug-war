@@ -20,6 +20,7 @@ namespace SPDW.Actors
 
         private StateMachine stateMachine;
         private StarSystemState starSystemState;
+        private SiteState siteState;
 
         private void Awake() {
             animator = GetComponentInChildren<Animator>();
@@ -27,6 +28,7 @@ namespace SPDW.Actors
 
             stateMachine = new StateMachine();
             starSystemState = new StarSystemState(this);
+            siteState = new SiteState(this);
         }
 
         private void Start() {
@@ -59,6 +61,9 @@ namespace SPDW.Actors
         public Vector2 MoveInput => moveInput;
         public SplineAnimate SplineAnimator => splineAnimate;
         public GameEvent TravelToSiteGameEvent => travelToSiteGameEvent;
+        public StateMachine StateMachine => stateMachine;
+        public StarSystemState StarSystemState => starSystemState;
+        public SiteState SiteState => siteState;
 
     }
 }

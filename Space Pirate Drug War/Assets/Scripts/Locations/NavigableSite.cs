@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.Events;
+using RoboRyanTron.Unite2017.Events;
 
 namespace SPDW.Locations
 {
     public class NavigableSite : MonoBehaviour
     {
         [SerializeField] private string siteName;
+        [SerializeField] private GameEvent reachedSiteGameEvent;
 
         public UnityEvent gotFocus;
         public UnityEvent lostFocus;
@@ -16,6 +18,10 @@ namespace SPDW.Locations
             } else {
                 lostFocus?.Invoke();
             }
+        }
+
+        private void OnTriggerEnter() {
+            reachedSiteGameEvent.Raise();
         }
 
         // ---- PROPERTIES ----

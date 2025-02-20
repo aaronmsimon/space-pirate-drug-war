@@ -9,7 +9,7 @@ namespace SPDW.StatePattern.PlayerStates
     {
         public StarSystemState(Player player) : base(player) { }
 
-        private StarSystem starSystem;        
+        private StarSystem starSystem;
         private float moveCooldown = 0.2f;
         private float lastMoveTime = 0;
         private bool canUpdate = false;
@@ -51,6 +51,7 @@ namespace SPDW.StatePattern.PlayerStates
                 Debug.LogError($"No spline flight path assigned to {starSystem.SelectedSite.SiteName}");
             }
             player.TravelToSiteGameEvent.Raise();
+            player.StateMachine.ChangeState(player.SiteState);
         }
     }
 }

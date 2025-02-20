@@ -5,7 +5,7 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "InputReader", menuName = "Game/Input Reader")]
 public class InputReader : ScriptableObject, GameInput.IStarSystemActions, GameInput.IUIActions
 {
-    // ---- PLAYER ----
+    // ---- STAR SYSTEM ----
     public event UnityAction<Vector2> moveEvent;
     public event UnityAction interactEvent;
 
@@ -20,7 +20,7 @@ public class InputReader : ScriptableObject, GameInput.IStarSystemActions, GameI
 			gameInput.UI.SetCallbacks(this);
 		}
 
-		EnablePlayerInput();
+		EnableStarSystemInput();
 	}
 
 	private void OnDisable()
@@ -28,7 +28,7 @@ public class InputReader : ScriptableObject, GameInput.IStarSystemActions, GameI
 		DisableAllInput();
 	}
 
-    // ---- PLAYER ----
+    // ---- STAR SYSTEM ----
 
     public void OnInteract(InputAction.CallbackContext context)
     {
@@ -104,7 +104,7 @@ public class InputReader : ScriptableObject, GameInput.IStarSystemActions, GameI
 
     // ---- ENABLE/DISABLE ----
     
-	public void EnablePlayerInput()
+	public void EnableStarSystemInput()
 	{
 		gameInput.StarSystem.Enable();
 		gameInput.UI.Disable();
