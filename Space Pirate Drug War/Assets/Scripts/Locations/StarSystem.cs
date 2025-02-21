@@ -40,7 +40,7 @@ namespace SPDW.Locations
             }
         }
 
-        private void Start() {
+        public void SelectFirstSite() {
             if (navigableSites.Count > 0) SelectSite(navigableSites[selectedSite]);
         }
 

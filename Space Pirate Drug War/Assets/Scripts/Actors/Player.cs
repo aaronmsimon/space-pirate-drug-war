@@ -3,6 +3,7 @@ using UnityEngine.Splines;
 using SPDW.StatePattern;
 using SPDW.StatePattern.PlayerStates;
 using RoboRyanTron.Unite2017.Events;
+using Unity.Mathematics;
 
 namespace SPDW.Actors
 {
@@ -17,6 +18,7 @@ namespace SPDW.Actors
         private Vector2 moveInput;
         private Animator animator;
         private SplineAnimate splineAnimate;
+        private TrailRenderer trailRenderer;
 
         private StateMachine stateMachine;
         private StarSystemState starSystemState;
@@ -24,7 +26,8 @@ namespace SPDW.Actors
 
         private void Awake() {
             animator = GetComponentInChildren<Animator>();
-            splineAnimate = GetComponentInChildren<SplineAnimate>();
+            splineAnimate = GetComponent<SplineAnimate>();
+            trailRenderer = GetComponentInChildren<TrailRenderer>();
 
             stateMachine = new StateMachine();
             starSystemState = new StarSystemState(this);
@@ -54,6 +57,15 @@ namespace SPDW.Actors
 
         private void OnMove(Vector2 movement) {
             moveInput = movement;
+        }
+
+        public void Reset() {
+            trailRenderer.enabled = false;
+            transform.position = Vector3.zero;
+            animator.Rebind();
+            animator.Update(0);
+            transform.rotation = quaternion.identity;
+            trailRenderer.enabled = true;
         }
 
         // ---- PROPERTIES ----

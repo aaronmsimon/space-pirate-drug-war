@@ -26,6 +26,9 @@ namespace SPDW.StatePattern.PlayerStates
             }
             canUpdate = true;
 
+            player.Reset();
+            starSystem.SelectFirstSite();
+
             player.InputReader.interactEvent += OnInteract;
         }
         
